@@ -2,18 +2,18 @@ import Button from './Button';
 
 const CTA = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D97706] rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#D97706] rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden">
+          <div className="grid md:grid-cols-2 items-center">
+            <div className="p-6 sm:p-8 md:p-12">
               <p className="text-[#0D9488] font-bold uppercase tracking-wide mb-4">GET IN TOUCH</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Get in Touch <span className="text-[#0D9488]">With Us</span>
               </h2>
               <p className="text-gray-600 mb-8">
@@ -41,9 +41,9 @@ const CTA = () => {
               </Button>
             </div>
 
-            <div className="bg-gradient-to-br from-[#0D9488] to-[#0F766E] p-12 h-full flex items-center justify-center">
+            <div className="bg-gradient-to-br from-[#0D9488] to-[#0F766E] p-8 sm:p-12 h-full flex items-center justify-center">
               <div className="relative">
-                <div className="w-64 h-64 bg-white/10 rounded-3xl backdrop-blur-sm p-8 transform hover:rotate-6 transition-transform duration-300">
+                <div className="w-48 h-48 sm:w-64 sm:h-64 bg-white/10 rounded-2xl sm:rounded-3xl backdrop-blur-sm p-6 sm:p-8 transform hover:rotate-6 transition-transform duration-300">
                   <div className="space-y-4">
                     <div className="h-4 bg-white/30 rounded animate-pulse"></div>
                     <div className="h-4 bg-white/30 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>

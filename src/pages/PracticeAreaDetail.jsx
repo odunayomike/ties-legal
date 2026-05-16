@@ -34,7 +34,7 @@ const PracticeAreaDetail = () => {
         'Government Relations',
         'Compliance Training'
       ],
-      overview: 'We help businesses navigate the complex regulatory environment in Nigeria. Our compliance practice covers industry-specific regulations, licensing requirements, and ongoing compliance management. We work with clients across fintech, technology, healthcare, and other regulated sectors to ensure full regulatory compliance.'
+      overview: 'We help businesses navigate the complex regulatory environment in Nigeria. Our compliance practice covers industry-specific regulations, licensing requirements, and ongoing compliance management. We work with clients across fintech, technology, and other regulated sectors to ensure full regulatory compliance.'
     },
     privacy: {
       title: 'Data Privacy & Protection Law',
@@ -89,10 +89,8 @@ const PracticeAreaDetail = () => {
         'Title Verification & Due Diligence',
         'Lease & Tenancy Agreements',
         'Property Development',
-        'Land Use & Zoning',
         'Property Registration',
-        'Real Estate Financing',
-        'Property Dispute Resolution'
+        'Real Estate Financing'
       ],
       overview: 'We provide comprehensive real estate legal services covering all aspects of property transactions. From due diligence and documentation to registration and dispute resolution, our team ensures your property interests are protected. We handle residential, commercial, and industrial property matters.'
     },
@@ -132,10 +130,10 @@ const PracticeAreaDetail = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <Link to="/practice-areas" className="inline-flex items-center gap-2 text-[#0D9488] hover:underline mb-6">
+            <Link to="/practice-areas" className="inline-flex items-center gap-2 text-[#0D9488] hover:underline mb-4 sm:mb-6">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
@@ -151,16 +149,16 @@ const PracticeAreaDetail = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-12">
+          <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
+            <div className="lg:col-span-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Overview</h2>
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12">
                 {currentArea.overview}
               </p>
 
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Why Should You Choose Us?</h2>
               <div className="space-y-4 mb-12">
                 {[
                   { title: 'Expert Knowledge', description: 'Deep understanding of Nigerian legal frameworks and international best practices' },

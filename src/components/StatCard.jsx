@@ -48,7 +48,7 @@ const StatCard = ({ value, label, suffix = '', duration = 2000 }) => {
 
   return (
     <div ref={cardRef} className="text-center p-6">
-      <div className="text-5xl font-bold text-[#0D9488] mb-2">
+      <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0D9488] mb-2">
         {count}{suffix}
       </div>
       <p className="text-gray-600">{label}</p>

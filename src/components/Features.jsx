@@ -11,7 +11,7 @@ const Features = () => {
       ),
       title: 'Corporate & Commercial Law',
       description: 'Comprehensive legal guidance for business formation, governance, contracts, and commercial transactions.',
-      link: '#corporate'
+      link: '/practice-areas/corporate'
     },
     {
       icon: (
@@ -21,7 +21,7 @@ const Features = () => {
       ),
       title: 'Regulatory & Compliance',
       description: 'Navigate complex regulatory frameworks and ensure full compliance across all business operations.',
-      link: '#compliance'
+      link: '/practice-areas/compliance'
     },
     {
       icon: (
@@ -31,7 +31,7 @@ const Features = () => {
       ),
       title: 'Data Privacy & Protection',
       description: 'Expert guidance on data protection compliance, privacy frameworks, and digital asset security.',
-      link: '#privacy'
+      link: '/practice-areas/privacy'
     },
     {
       icon: (
@@ -41,7 +41,7 @@ const Features = () => {
       ),
       title: 'Intellectual Property Law',
       description: 'Protect your innovations, trademarks, patents, and creative works with strategic IP management.',
-      link: '#ip'
+      link: '/practice-areas/ip'
     },
     {
       icon: (
@@ -51,7 +51,7 @@ const Features = () => {
       ),
       title: 'AI & Technology Law',
       description: 'Navigate emerging technology frameworks and AI governance with cutting-edge legal expertise.',
-      link: '#tech'
+      link: '/practice-areas/tech'
     },
     {
       icon: (
@@ -61,14 +61,14 @@ const Features = () => {
       ),
       title: 'Real Estate & Property Law',
       description: 'Complete property transaction support, from due diligence to documentation and registration.',
-      link: '#realestate'
+      link: '/practice-areas/realestate'
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <SectionTitle
             eyebrow="OUR PRACTICE AREAS"
             title={<>Our <span className="text-[#0D9488]">Practice Areas</span></>}
@@ -77,7 +77,7 @@ const Features = () => {
           />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}

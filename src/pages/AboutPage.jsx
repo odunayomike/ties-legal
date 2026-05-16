@@ -1,11 +1,67 @@
+import { useState, useEffect, useRef } from 'react';
 import { Scale, Handshake, Lightbulb, Target } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
 
+const AnimatedStat = ({ value, suffix = '', label }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const numValue = parseInt(value);
+    const duration = 1500;
+    const steps = 40;
+    const increment = numValue / steps;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      const current = Math.min(Math.round(increment * step), numValue);
+      setCount(current);
+      if (step >= steps) {
+        clearInterval(timer);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isVisible, value]);
+
+  return (
+    <div ref={ref}>
+      <Card className="border border-gray-200">
+        <div className="text-center">
+          <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D9488] mb-2">{count}{suffix}</div>
+          <p className="text-gray-600">{label}</p>
+        </div>
+      </Card>
+    </div>
+  );
+};
+
 const AboutPage = () => {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <SectionTitle
@@ -18,64 +74,40 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                TIES Legal & Advisory is a full-service law firm committed to delivering strategic, results-driven legal solutions that support innovation and business growth.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                We bridge the gap between complex legal requirements and practical, people-focused advice, helping our clients operate with clarity and confidence.
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Your Partner For All Things Legal</h2>
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
+                We specialize in providing comprehensive legal solutions designed for the modern business landscape. We equip early stage innovators and disruptors with the foundational legal tools to navigate evolving industries, while offering established businesses the insight and strategy needed to scale with impact.
               </p>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                To provide trusted legal guidance that empowers businesses and individuals to innovate, grow, and operate with confidence. We are committed to delivering excellence in every matter we handle, supporting our clients' objectives with practical, strategic advice.
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Clients</h2>
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                Our clients include tech-driven innovators, creative entrepreneurs, and high-growth SMEs navigating the complexities of digital transformation. Whether you are an individual pioneer or an organisation seeking to refine your competitive edge, we provide the legal infrastructure needed to lead with confidence.
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            <Card className="border border-gray-200">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#0D9488] mb-2">19+</div>
-                <p className="text-gray-600">Years Combined Experience</p>
-              </div>
-            </Card>
-            <Card className="border border-gray-200">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#0D9488] mb-2">100+</div>
-                <p className="text-gray-600">Clients Served</p>
-              </div>
-            </Card>
-            <Card className="border border-gray-200">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#0D9488] mb-2">8+</div>
-                <p className="text-gray-600">Practice Areas</p>
-              </div>
-            </Card>
-            <Card className="border border-gray-200">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#0D9488] mb-2">2</div>
-                <p className="text-gray-600">Expert Partners</p>
-              </div>
-            </Card>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            <AnimatedStat value="10" suffix="" label="Years Combined Experience" />
+            <AnimatedStat value="10" suffix="+" label="Clients Served" />
+            <AnimatedStat value="8" suffix="+" label="Practice Areas" />
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Our <span className="text-[#0D9488]">Values</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 title: 'Excellence',

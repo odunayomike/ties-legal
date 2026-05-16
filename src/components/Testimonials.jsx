@@ -32,9 +32,9 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <SectionTitle
               eyebrow="CLIENT TESTIMONIALS"
@@ -42,14 +42,14 @@ const Testimonials = () => {
               subtitle="Our commitment to excellence is reflected in every case we handle. Hear what our clients have to say about working with Ties Legal."
             />
 
-            <div className="mt-8 bg-[#F5E6D3] rounded-3xl p-8">
+            <div className="mt-6 sm:mt-8 bg-[#F5E6D3] rounded-2xl sm:rounded-3xl p-5 sm:p-8">
               <TestimonialCard {...testimonials[currentIndex]} />
             </div>
 
             <div className="flex items-center justify-center gap-4 mt-6">
               <button
                 onClick={previous}
-                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[#0D9488] hover:text-white transition-all hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[#0D9488] hover:text-white transition-all hover:scale-110"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -70,7 +70,7 @@ const Testimonials = () => {
 
               <button
                 onClick={next}
-                className="w-12 h-12 rounded-full bg-[#0D9488] text-white shadow-lg flex items-center justify-center hover:bg-[#0F766E] transition-all hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0D9488] text-white shadow-lg flex items-center justify-center hover:bg-[#0F766E] transition-all hover:scale-110"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -19,8 +19,7 @@ const Navbar = () => {
 
   const resources = [
     { label: 'About Us', href: '/about' },
-    { label: 'Our Team', href: '/team' },
-    { label: 'Home', href: '/' }
+    { label: 'Our People', href: '/team' }
   ];
 
   return (
@@ -74,7 +73,7 @@ const Navbar = () => {
                 About
               </Link>
               <Link to="/team" className="text-gray-700 hover:text-[#0D9488] transition-colors">
-                Team
+                Our People
               </Link>
               <Link to="/contact" className="text-gray-700 hover:text-[#0D9488] transition-colors">
                 Contact

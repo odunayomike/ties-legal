@@ -2,16 +2,16 @@ import SectionTitle from './SectionTitle';
 
 const About = () => {
   return (
-    <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-64 sm:w-96 h-64 sm:h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-64 sm:w-96 h-64 sm:h-96 bg-[#0D9488] rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative">
-            <div className="absolute -top-10 -left-10 w-24 h-24">
+            <div className="absolute -top-10 -left-10 w-24 h-24 hidden sm:block">
               <div className="flex gap-2">
                 {[...Array(4)].map((_, i) => (
                   <svg key={i} className="w-6 h-6 text-[#0D9488]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -21,7 +21,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700">
+            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-gray-700">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-[#0D9488]/20 to-transparent rounded-2xl p-6 backdrop-blur-sm">
                   <div className="w-16 h-16 bg-[#0D9488] rounded-full mx-auto mb-3 flex items-center justify-center animate-pulse">
@@ -49,11 +49,11 @@ const About = () => {
               subtitle=""
               darkBg={true}
             />
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              TIES Legal & Advisory is a full-service law firm committed to delivering strategic, results-driven legal solutions that support innovation and business growth.
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+              TIES Legal & Advisory isn't just a law firm; we're your strategic partners in growth. We simplify legal complexities to provide clear, actionable advice that fuels innovation. By blending legal expertise with an agile problem-solving mindset, we empower you to scale with confidence and stay ahead of the curve.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              We bridge the gap between complex legal requirements and practical, people-focused advice, helping our clients operate with clarity and confidence.
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+              Whether you are navigating the intricacies of digital transformation, securing intellectual property, or structuring complex commercial agreements, we provide the clarity needed to make bold decisions.
             </p>
           </div>
         </div>

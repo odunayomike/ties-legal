@@ -96,7 +96,7 @@ const PracticeAreasPage = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <SectionTitle
@@ -110,9 +110,9 @@ const PracticeAreasPage = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {practiceAreas.map((area, index) => (
               <FeatureCard key={index} {...area} />
             ))}
@@ -120,12 +120,12 @@ const PracticeAreasPage = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
             Need Legal Assistance?
           </h2>
-          <p className="text-gray-700 text-lg mb-8">
+          <p className="text-gray-700 text-base sm:text-lg mb-6 sm:mb-8">
             Our team of experienced legal professionals is ready to help you navigate your legal challenges with confidence.
           </p>
           <Link

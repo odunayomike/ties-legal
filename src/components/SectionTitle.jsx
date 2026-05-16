@@ -6,11 +6,11 @@ const SectionTitle = ({ eyebrow, title, subtitle, centered = false, isHero = fal
           {eyebrow}
         </p>
       )}
-      <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isHero ? 'leading-tight md:leading-tight' : ''} ${darkBg ? 'text-white' : 'text-gray-900'}`}>
+      <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 ${isHero ? 'leading-tight md:leading-tight' : ''} ${darkBg ? 'text-white' : 'text-gray-900'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-lg max-w-2xl ${isHero ? 'leading-relaxed' : ''} ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-base sm:text-lg max-w-2xl ${isHero ? 'leading-relaxed' : ''} ${darkBg ? 'text-gray-300' : 'text-gray-600'} ${centered ? 'mx-auto' : ''}`}>
           {subtitle}
         </p>
       )}
