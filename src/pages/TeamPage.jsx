@@ -47,8 +47,11 @@ const TeamPage = () => {
                 <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                   <div className="bg-gradient-to-br from-[#0D9488] to-[#0F766E] rounded-2xl sm:rounded-3xl p-8 sm:p-12 flex items-center justify-center h-64 sm:h-80 md:h-96">
                     <div className="w-32 h-32 sm:w-48 sm:h-48 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <svg className="w-20 h-20 sm:w-32 sm:h-32 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                      <svg className="w-24 h-24 sm:w-36 sm:h-36 text-white" viewBox="0 0 64 64" fill="currentColor">
+                        <circle cx="32" cy="20" r="10" />
+                        <path d="M24 16c-1-5 2-10 8-10s9 5 8 10c4-2 6 1 5 4s-3 3-3 3c0 0 1 4-2 6l-1 1c0 0-2 2-7 2s-7-2-7-2l-1-1c-3-2-2-6-2-6s-2 0-3-3 1-6 5-4z" />
+                        <path d="M16 54c0-10 7-18 16-18s16 8 16 18" opacity="0.85" />
+                        <path d="M26 36c0 0 2 4 6 4s6-4 6-4v4c0 2-3 5-6 5s-6-3-6-5v-4z" opacity="0.7" />
                       </svg>
                     </div>
                   </div>
