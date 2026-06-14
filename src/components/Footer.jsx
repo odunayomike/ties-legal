@@ -63,8 +63,8 @@ const Footer = () => {
     <>
       <footer className="bg-gray-900 text-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-8">
-            <div className="col-span-2 sm:col-span-2 md:col-span-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+            <div className="sm:col-span-2 md:col-span-1">
               <Link to="/">
                 <Logo className="mb-4" />
               </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-white font-bold mb-4">Practice Areas</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm sm:text-base">
                 {practiceAreas.map((item) => (
                   <li key={item.label}>
                     <Link to={item.href} className="hover:text-[#0D9488] transition-colors">
@@ -120,7 +120,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-white font-bold mb-4">Company</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm sm:text-base">
                 {company.map((item) => (
                   <li key={item.label}>
                     <Link to={item.href} className="hover:text-[#0D9488] transition-colors">
@@ -133,7 +133,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-white font-bold mb-4">Resources</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm sm:text-base">
                 <li>
                   <button
                     onClick={() => setShowBlogPopup(true)}
@@ -155,7 +155,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-white font-bold mb-4">Legal</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm sm:text-base">
                 <li>
                   <Link to="/privacy-policy" className="hover:text-[#0D9488] transition-colors">
                     Privacy Policy

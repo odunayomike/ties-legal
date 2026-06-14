@@ -182,7 +182,7 @@ const PracticeAreaDetail = () => {
             </div>
 
             <div>
-              <Card className="sticky top-24 border border-gray-200">
+              <Card className="lg:sticky lg:top-24 border border-gray-200">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Our Services</h3>
                 <ul className="space-y-3">
                   {currentArea.services.map((service, index) => (

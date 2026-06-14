@@ -91,7 +91,7 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <AnimatedStat value="10" suffix="" label="Years Combined Experience" />
             <AnimatedStat value="10" suffix="+" label="Clients Served" />
             <AnimatedStat value="8" suffix="+" label="Practice Areas" />
@@ -112,28 +112,28 @@ const AboutPage = () => {
               {
                 title: 'Excellence',
                 description: 'We maintain the highest standards of professionalism in all our work.',
-                icon: <Scale className="w-12 h-12 text-[#0D9488]" />
+                icon: <Scale className="w-8 h-8 sm:w-12 sm:h-12 text-[#0D9488]" />
               },
               {
                 title: 'Integrity',
                 description: 'We uphold ethical practices and transparency in every interaction.',
-                icon: <Handshake className="w-12 h-12 text-[#0D9488]" />
+                icon: <Handshake className="w-8 h-8 sm:w-12 sm:h-12 text-[#0D9488]" />
               },
               {
                 title: 'Innovation',
                 description: 'We embrace new technologies and methodologies to serve our clients better.',
-                icon: <Lightbulb className="w-12 h-12 text-[#0D9488]" />
+                icon: <Lightbulb className="w-8 h-8 sm:w-12 sm:h-12 text-[#0D9488]" />
               },
               {
                 title: 'Client Focus',
                 description: 'We prioritize our clients\' needs and deliver tailored solutions.',
-                icon: <Target className="w-12 h-12 text-[#0D9488]" />
+                icon: <Target className="w-8 h-8 sm:w-12 sm:h-12 text-[#0D9488]" />
               }
             ].map((value, index) => (
               <Card key={index} className="border border-gray-200">
                 <div className="text-center">
                   <div className="flex justify-center mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                  <h3 className="text-base sm:text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
                   <p className="text-gray-700">{value.description}</p>
                 </div>
               </Card>

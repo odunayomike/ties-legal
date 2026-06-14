@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import Button from './Button';
@@ -6,6 +6,7 @@ import Dropdown from './Dropdown';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPracticeAreasOpen, setIsPracticeAreasOpen] = useState(false);
 
   const practiceAreas = [
     { label: 'All Practice Areas', href: '/practice-areas' },
@@ -22,11 +23,24 @@ const Navbar = () => {
     { label: 'Our People', href: '/team' }
   ];
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsPracticeAreasOpen(false);
+  };
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleScroll = () => closeMobileMenu();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobileMenuOpen]);
+
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link to="/" onClick={closeMobileMenu}>
             <Logo />
           </Link>
 
@@ -66,19 +80,46 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 animate-fadeIn">
             <div className="flex flex-col gap-4">
-              <Link to="/practice-areas" className="text-gray-700 hover:text-[#0D9488] transition-colors">
-                Practice Areas
-              </Link>
-              <Link to="/about" className="text-gray-700 hover:text-[#0D9488] transition-colors">
+              <div>
+                <button
+                  onClick={() => setIsPracticeAreasOpen(!isPracticeAreasOpen)}
+                  className="flex items-center justify-between w-full text-gray-700 hover:text-[#0D9488] transition-colors"
+                >
+                  <span>Practice Areas</span>
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${isPracticeAreasOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isPracticeAreasOpen && (
+                  <div className="mt-2 ml-4 flex flex-col gap-2">
+                    {practiceAreas.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={closeMobileMenu}
+                        className="text-sm text-gray-600 hover:text-[#0D9488] transition-colors py-1"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <Link to="/about" onClick={closeMobileMenu} className="text-gray-700 hover:text-[#0D9488] transition-colors">
                 About
               </Link>
-              <Link to="/team" className="text-gray-700 hover:text-[#0D9488] transition-colors">
+              <Link to="/team" onClick={closeMobileMenu} className="text-gray-700 hover:text-[#0D9488] transition-colors">
                 Our People
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-[#0D9488] transition-colors">
+              <Link to="/contact" onClick={closeMobileMenu} className="text-gray-700 hover:text-[#0D9488] transition-colors">
                 Contact
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" onClick={closeMobileMenu}>
                 <Button size="sm" className="w-full justify-center">
                   Schedule Consultation
                 </Button>

@@ -33,7 +33,7 @@ const CTA = () => {
                   +234 904 363 8416 / +234 815 413 5769
                 </a>
               </div>
-              <Button size="lg">
+              <Button size="lg" className="w-full sm:w-auto justify-center">
                 Schedule Consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -41,7 +41,7 @@ const CTA = () => {
               </Button>
             </div>
 
-            <div className="bg-gradient-to-br from-[#0D9488] to-[#0F766E] p-8 sm:p-12 h-full flex items-center justify-center">
+            <div className="hidden md:flex bg-gradient-to-br from-[#0D9488] to-[#0F766E] p-8 sm:p-12 h-full items-center justify-center">
               <div className="relative">
                 <div className="w-48 h-48 sm:w-64 sm:h-64 bg-white/10 rounded-2xl sm:rounded-3xl backdrop-blur-sm p-6 sm:p-8 transform hover:rotate-6 transition-transform duration-300">
                   <div className="space-y-4">

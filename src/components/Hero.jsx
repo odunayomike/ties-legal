@@ -24,7 +24,7 @@ const Hero = () => {
 
             <div className="max-w-md">
               <p className="text-sm font-semibold text-gray-700 mb-2">Subscribe for newsletters</p>
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   value={email}
@@ -43,7 +43,7 @@ const Hero = () => {
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0D9488]/20 to-transparent rounded-3xl transform rotate-3"></div>
-            <div className="relative bg-[#F5E6D3] rounded-2xl sm:rounded-3xl p-5 sm:p-8 transform hover:scale-105 transition-transform duration-300">
+            <div className="relative bg-[#F5E6D3] rounded-2xl sm:rounded-3xl p-5 sm:p-8 transform sm:hover:scale-105 transition-transform duration-300">
               <div className="space-y-4">
                 <div className="bg-white rounded-2xl p-4 shadow-lg animate-float">
                   <p className="text-gray-800 font-medium">Good morning, Lawyer!</p>

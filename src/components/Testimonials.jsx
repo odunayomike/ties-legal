@@ -34,8 +34,8 @@ const Testimonials = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="md:col-span-1">
             <SectionTitle
               eyebrow="CLIENT TESTIMONIALS"
               title="Trusted by Leading Businesses Across Nigeria"

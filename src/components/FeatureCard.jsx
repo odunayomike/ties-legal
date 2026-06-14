@@ -5,7 +5,7 @@ const FeatureCard = ({ icon, title, description, link }) => {
   return (
     <Card className="border border-gray-200">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="w-20 h-20 bg-gradient-to-br from-[#0D9488] to-[#0F766E] rounded-2xl flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#0D9488] to-[#0F766E] rounded-2xl flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
           {icon}
         </div>
         <h3 className="text-xl font-bold text-gray-900">{title}</h3>
