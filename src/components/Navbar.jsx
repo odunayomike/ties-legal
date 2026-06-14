@@ -31,7 +31,13 @@ const Navbar = () => {
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
-    const handleScroll = () => closeMobileMenu();
+    const scrollY = window.scrollY;
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - scrollY) > 10) {
+        closeMobileMenu();
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobileMenuOpen]);
