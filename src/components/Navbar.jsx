@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import Button from './Button';
@@ -7,6 +7,7 @@ import Dropdown from './Dropdown';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isPracticeAreasOpen, setIsPracticeAreasOpen] = useState(false);
+  const scrollBaseline = useRef(0);
 
   const practiceAreas = [
     { label: 'All Practice Areas', href: '/practice-areas' },
@@ -31,9 +32,9 @@ const Navbar = () => {
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
-    const scrollY = window.scrollY;
+    scrollBaseline.current = window.scrollY;
     const handleScroll = () => {
-      if (Math.abs(window.scrollY - scrollY) > 10) {
+      if (Math.abs(window.scrollY - scrollBaseline.current) > 10) {
         closeMobileMenu();
       }
     };
@@ -41,6 +42,12 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      scrollBaseline.current = window.scrollY;
+    }
+  }, [isPracticeAreasOpen]);
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
